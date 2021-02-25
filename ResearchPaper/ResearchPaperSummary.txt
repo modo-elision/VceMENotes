@@ -1,0 +1,37 @@
+Embedding Encryption and Machine Learning Intrusion Prevention Systems on 
+			Programmable Logic Controllers(PLC)
+
+Programmable Logic Controllers(PLC) were made robust to sustain harsh industrial environments, but less priority was given to protect from the potential cyber threats.Major cyber-attacks on PLC can be Categories in 3-types :
+1)Interception
+2)Injection 
+3)Denial of Service(DoS).
+
+There are 2 way to overcome these cyberthreats.
+1)Adding a gateway which is expensive and also adds some delay to network which result in its real-time perfomance which affects the responsiveness of SCADA systems.
+2)Embed A secure layer in the PLC itself
+
+Advanced Encryption Standard (AES) is the most widely used algorithm in software and hardware to encrypt sensitive data
+AES layer stands b/w Network layer and Intrusion Prevention System.it uses Pre-SharedKey(PSK) Scheme
+
+Every data packet received is decrypted by the AES Encryption Layer using the PSK, 
+and then sent to the Network Layer for processing. 
+the reverse process occurs for sending data packets, as the AES Encryption Layer will encrypt the message using the PSK and then forward the ciphertext to the external network.
+
+The encryption process have five steps:
+1)PlainText Division in 128 bits
+2)CBC Block Cipher Mode Operation
+3)Keyphase Hash: 256 bits key is used 
+4)AES-256 Encryption : CBC + keyhash is done by AES-256
+5)Message Assembly
+ 
+The decryption process is executing above 5 steps in reverse order.
+
+On top of Encryption 2 features are used for the training of the machine learning algorithm: 
+1)packet interarrival time 
+2)packet processing time.
+
+by using the above logic,
+Embedded encryption module together with the intrusion prevention system makes OpenPLC more secure and immune to major cyber threats and also did not interfere the Real-time characteristics of OpenPLC.
+
+
+
